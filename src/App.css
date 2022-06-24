@@ -34,18 +34,27 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding: 1.5rem 1.75rem;
+    border-radius: 3rem;
+
+    background: #2d3033;
+    -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+    box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
 
 .search input {
-    flex: .75;
+    flex: 1;
     color: rgba(255, 255, 255, 0.473);
     font-size: 1.5rem;
     font-weight: 500;
+    padding-right: 1rem;
 
-    padding: 1.5rem;
-    border-radius: 2rem;
+    outline: none;
     background: #2d3033;
+}
 
-    -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-    box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+.search img {
+    width: 2rem;
+    cursor: pointer;
 }
