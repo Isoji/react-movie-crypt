@@ -1,6 +1,8 @@
 import { React, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Header from './components/Header/Header';
+
+import Layout from './components/Layout/Layout';
 import MovieList from './components/MovieList/MovieList';
 import SearchBar from './components/SearchBar/SearchBar';
 
@@ -12,9 +14,10 @@ const App = () => {
     return (
         <>
         <Toaster />
-        <Header />
-        <SearchBar moviesSetter={setMovies}/>
-        <MovieList movies={movies}/>
+        <Layout>
+            <SearchBar moviesSetter={setMovies}/>
+            <MovieList movies={movies}/>
+        </Layout>
         </>
     );
 }
