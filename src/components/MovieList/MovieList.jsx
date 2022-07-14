@@ -23,13 +23,15 @@ const MovieList = ({ movies }) => {
   return (
     <>
       {movies.length > 0 ? (
-        <div className="container">
+        <div className="movielist-container">
           {movies.map((movie) => (
             <Movie movie={movie} />
           ))}
         </div>
       ) : (
-        <h2>No results.</h2>
+        <div className="movielist-empty">
+          <h2>No results found.</h2>
+        </div>
       )}
     </>
   );
