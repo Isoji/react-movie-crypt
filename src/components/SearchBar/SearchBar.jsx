@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import SearchIcon from "./../../assets/search.svg";
 import "./SearchBar.scss";
 
-const API_URL = "https://www.omdbapi.com?apikey=d3960d27";
+const API_URL = `https://www.omdbapi.com?apikey=${process.env.REACT_APP_API_KEY}`;
 
 const SearchBar = ({ moviesSetter }) => {
   const [searchText, setSearchText] = useState("");
