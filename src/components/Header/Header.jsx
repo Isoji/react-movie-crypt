@@ -1,12 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import toast from "react-hot-toast";
 import logo from "../../assets/logo.png";
 
 import classes from "./Header.module.scss";
-import { useEffect } from "react";
+
+const notify = () => toast("Work in progress..");
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(true);
@@ -40,21 +42,25 @@ const Header = () => {
     <>
       <header className={classes.header}>
         <div className={classes.header__content}>
-          <img className={classes.header__content__logo} src={logo}></img>
+          <img
+            className={classes.header__content__logo}
+            src={logo}
+            alt="logo"
+          ></img>
           <nav
             className={`${classes.header__content__nav} ${
               menuOpen ? classes.isMenu : ""
-            }`} ///bug here
+            }`}
           >
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a onClick={notify}>Home</a>
               </li>
               <li>
-                <a href="/">Collection</a>
+                <a onClick={notify}>Collection</a>
               </li>
             </ul>
-            <button>Connect</button>
+            <button onClick={notify}>Connect</button>
           </nav>
           <div className={classes.header__content__toggle}>
             {menuOpen ? (
