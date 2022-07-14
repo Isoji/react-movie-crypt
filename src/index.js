@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/main.scss';
-import App from './App';
+import { MoralisProvider } from "react-moralis";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './App';
+import './styles/main.scss';
+
+ReactDOM.render(
+<MoralisProvider appId={process.env.REACT_APP_APP_ID} serverUrl={process.env.REACT_APP_SERVER_URL}>
+    <App />
+</MoralisProvider>,
+
+document.getElementById('root'));
