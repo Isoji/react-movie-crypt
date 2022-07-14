@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import SearchIcon from "./../../assets/search.svg";
 import "./SearchBar.scss";
 
@@ -13,12 +13,10 @@ const SearchBar = ({ moviesSetter }) => {
 
     if (data.Search) {
       moviesSetter(data.Search);
+    } else {
+      moviesSetter([]);
     }
   };
-
-  useEffect(() => {
-    searchMovies(searchText);
-  }, [searchText]);
 
   return (
     <>
