@@ -1,0 +1,66 @@
+@import '../../../styles/variables';
+
+.moviecard {
+    position: relative;
+    margin: 1rem;
+    //border: solid 1px #333;
+    width: 160px;
+    height: 220px;
+    transition: width 1s, height 1s;
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px;
+        width: 160px;
+        height: 220px;
+        transition: width 1s, height 1s;
+
+        &:hover {
+            width: 240px;
+            height: 360px;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.65);
+        opacity: 0;
+        color: white;
+        font-size: 15px;
+        padding: 20px;
+        text-align: center;
+        transition: .5s;
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: inherit;
+            padding: 0 1rem;
+            text-decoration: none;
+            border: solid 1px;
+            border-radius: 10px;
+            background-color: rgb(36, 34, 34);
+
+            &:hover {
+                background-color: $secondary;
+                color:rgb(36, 34, 34)
+            }
+        }
+    }
+
+    &:hover, &:hover .moviecard__image {
+        width: 240px;
+        height: 360px;
+    }
+    &:hover .moviecard__overlay {
+        opacity: 1;
+    }
+}
