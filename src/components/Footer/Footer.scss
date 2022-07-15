@@ -3,7 +3,51 @@
 .footer {
     position: absolute;
     bottom: 0;
-    height: 100px;
+    height: $footer-height;
     width: 100%;
     background: $dark;
+
+    &__content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        color: $light;
+        margin: 0 auto;
+        max-width: 1920px;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        h2 {
+            margin-top: $spacing-lg;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            margin-top: 1rem;
+            margin-bottom: $spacing-lg;
+
+            li {
+                margin: 0 2rem;
+            }
+            
+            a {
+                text-decoration: none;
+                color: $light;
+            }
+        }
+    }
+}
+
+.mail-img {
+    max-height: 64px;
+    max-width: 64px;
+}
+
+.github-img {
+    max-height: 64px;
+    max-width: 64px;
 }

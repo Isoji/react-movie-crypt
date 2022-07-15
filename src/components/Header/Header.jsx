@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import toast from "react-hot-toast";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/app-logo.png";
 
 import classes from "./Header.module.scss";
 

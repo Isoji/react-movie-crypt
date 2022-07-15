@@ -17,6 +17,7 @@ $border-radius: 12px;
 
 // header height
 $header-height: 100px;
+$footer-height: 200px;
 
 @mixin breakpoint($point) {
     @if $point == md {
