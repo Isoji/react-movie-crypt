@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import logo from "../../assets/app-logo.png";
 
 import classes from "./Header.module.scss";
+import Connect from "../Connect/Connect";
 
 const notify = () => toast("Work in progress..");
 
@@ -18,15 +19,26 @@ const Header = () => {
   });
 
   useEffect(() => {
-    const handleResize = () => {
+    if (window) {
+      const handleResize = () => {
+        setSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window && !size.width && !size.height) {
       setSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   useEffect(() => {
@@ -60,7 +72,7 @@ const Header = () => {
                 <a onClick={notify}>Collection</a>
               </li>
             </ul>
-            <button onClick={notify}>Connect</button>
+            <Connect />
           </nav>
           <div className={classes.header__content__toggle}>
             {menuOpen ? (
