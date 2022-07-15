@@ -13,7 +13,7 @@ const App = () => {
         <>
         <Toaster />
         <Layout>
-            <SearchBar moviesSetter={setMovies}/>
+            <SearchBar moviesSetter={setMovies} />
             <MovieList movies={movies}/>
         </Layout>
         </>

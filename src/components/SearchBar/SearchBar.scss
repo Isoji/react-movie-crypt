@@ -21,6 +21,7 @@
     box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 
     input {
+        max-width: 100%;
         flex: 1;
         padding-right: 1rem;
         font-size: 1.25rem;
@@ -34,5 +35,12 @@
     img {
         width: 2rem;
         cursor: pointer;
+    }
+
+    @media (max-width: 1024px) {
+        width: 70%;
+    }
+    @media (max-width: 640px) {
+        width: 85%;
     }
 }

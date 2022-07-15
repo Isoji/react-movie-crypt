@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.scss";
-import githubIcon from "../../assets/github-logo.png";
-import mailIcon from "../../assets/mail.png";
+import githubIcon from "../../assets/github-icon.svg";
+import emailIcon from "../../assets/email.svg";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
           <ul>
             <li>
               <a href="mailto:contact@tremblayben.com">
-                <img className="mail-img" src={mailIcon} alt="Email"></img>
+                <img className="mail-img" src={emailIcon} alt="Email"></img>
               </a>
             </li>
             <li>
