@@ -11,7 +11,7 @@ const MovieList = ({ movies }) => {
             <Movie key={movie.imdbID} movie={movie} />
           ))}
         </div>
-      ) : (
+      ) : movies === "" ? null : (
         <div className="movielist-empty">
           <h2>No results found.</h2>
         </div>
