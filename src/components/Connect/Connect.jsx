@@ -1,6 +1,12 @@
 import React from "react";
 import { useMoralis } from "react-moralis";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
+
+const metaMaskNotInstalled = () =>
+  toast(
+    "The MetaMask browser extension must be installed in order to connect."
+  );
 
 const Connect = () => {
   const {
@@ -20,6 +26,10 @@ const Connect = () => {
   }, [isAuthenticated]);
 
   const login = async () => {
+    // Check if MetaMask is installed
+    if (typeof window.ethereum == "undefined") {
+      return metaMaskNotInstalled();
+    }
     if (!isAuthenticated) {
       await authenticate({ signingMessage: "Log in using Moralis" })
         .then(function (user) {
@@ -36,9 +46,10 @@ const Connect = () => {
     await logout();
     console.log("logged out");
   };
+
   return (
     <>
-      <button onClick={isAuthenticated ? logout : login}>
+      <button onClick={isAuthenticated ? logOut : login}>
         {isAuthenticated ? "Disconnect" : "Connect Wallet"}
       </button>
     </>
