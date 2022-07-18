@@ -2,7 +2,7 @@ import React from "react";
 import "./Movie.scss";
 import toast from "react-hot-toast";
 
-const notify = () => {
+const notifyProgress = () => {
   toast("Work in progess..");
 };
 
@@ -21,7 +21,7 @@ const Movie = ({ movie }) => {
         ></img>
         <div className="moviecard__overlay">
           <p>{movie.Title}</p>
-          <a onClick={notify}>Buy</a>
+          <a onClick={notifyProgress}>Buy</a>
         </div>
       </div>
     </>

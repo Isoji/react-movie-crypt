@@ -3,7 +3,7 @@ import { useMoralis } from "react-moralis";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 
-const metaMaskNotInstalled = () =>
+const notifyNotInstalled = () =>
   toast(
     "The MetaMask browser extension must be installed in order to connect."
   );
@@ -28,7 +28,7 @@ const Connect = () => {
   const login = async () => {
     // Check if MetaMask is installed
     if (typeof window.ethereum == "undefined") {
-      return metaMaskNotInstalled();
+      return notifyNotInstalled();
     }
     if (!isAuthenticated) {
       await authenticate({ signingMessage: "Log in using Moralis" })

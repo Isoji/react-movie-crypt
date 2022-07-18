@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.home {
+    &__message {
+        text-align: center;
+        margin-top: 4rem;
+        color: $light;
+    }
+}
