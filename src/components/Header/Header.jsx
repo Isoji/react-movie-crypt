@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
@@ -12,6 +12,7 @@ import Connect from "../Connect/Connect";
 const notify = () => toast("Work in progress..");
 
 const Header = () => {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(true);
   const [size, setSize] = useState({
     width: undefined,
@@ -50,6 +51,12 @@ const Header = () => {
   const menuToggleHandler = () => {
     setMenuOpen((p) => !p);
   };
+
+  const handleWindowReload = () => {
+    if (location === "/") {
+      window.location.reload();
+    }
+  };
   return (
     <>
       <header className={classes.header}>
@@ -66,7 +73,7 @@ const Header = () => {
           >
             <ul>
               <li>
-                <Link to="/" onClick={() => window.location.reload()}>
+                <Link to="/" onClick={handleWindowReload}>
                   Home
                 </Link>
               </li>
