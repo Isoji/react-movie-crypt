@@ -1,10 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Movie.scss";
-import toast from "react-hot-toast";
-
-const notifyProgress = () => {
-  toast("Work in progess..");
-};
 
 const Movie = ({ movie }) => {
   return (
@@ -21,7 +17,7 @@ const Movie = ({ movie }) => {
         ></img>
         <div className="moviecard__overlay">
           <p>{movie.Title}</p>
-          <a onClick={notifyProgress}>Buy</a>
+          <Link to="/cart">Buy</Link>
         </div>
       </div>
     </>
