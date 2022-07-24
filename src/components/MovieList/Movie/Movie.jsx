@@ -13,11 +13,13 @@ const Movie = ({ movie }) => {
               ? movie.Poster
               : "https://www.movienewz.com/img/films/poster-holder.jpg"
           }
-          alt="movie-poster"
+          alt="movie poster"
         ></img>
         <div className="moviecard__overlay">
           <p>{movie.Title}</p>
-          <Link to="/cart">Buy</Link>
+          <Link to="/cart" state={{ movie: movie }}>
+            Buy
+          </Link>
         </div>
       </div>
     </>
