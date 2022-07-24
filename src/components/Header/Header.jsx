@@ -9,7 +9,8 @@ import logo from "../../assets/app-logo.png";
 import classes from "./Header.module.scss";
 import Connect from "../Connect/Connect";
 
-const notify = () => toast("Work in progress..");
+const notify = () =>
+  toast("Work in progress..", { style: { background: "#ba9511" } });
 
 const Header = () => {
   const location = useLocation();
