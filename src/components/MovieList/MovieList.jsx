@@ -8,7 +8,7 @@ const MovieList = ({ movies }) => {
       {movies.length > 0 ? (
         <div className="movielist-container">
           {movies.map((movie) => (
-            <Movie key={movie.imdbID} movie={movie} />
+            <Movie key={movie.id} movie={movie} />
           ))}
         </div>
       ) : movies === "" ? null : (

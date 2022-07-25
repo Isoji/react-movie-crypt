@@ -9,14 +9,14 @@ const Movie = ({ movie }) => {
         <img
           className="moviecard__image"
           src={
-            movie.Poster !== "N/A"
-              ? movie.Poster
+            movie.poster_path !== null
+              ? `https://image.tmdb.org/t/p/w185/${movie.poster_path}`
               : "https://www.movienewz.com/img/films/poster-holder.jpg"
           }
           alt="movie poster"
         ></img>
         <div className="moviecard__overlay">
-          <p>{movie.Title}</p>
+          <p>{movie.original_title}</p>
           <Link to="/cart" state={{ movie: movie }}>
             Buy
           </Link>

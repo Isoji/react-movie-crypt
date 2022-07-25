@@ -16,15 +16,15 @@ const Cart = () => {
           <img
             className="product__container__content__poster"
             src={
-              movie.Poster !== "N/A"
-                ? movie.Poster
+              movie.poster_path !== null
+                ? `https://image.tmdb.org/t/p/w300/${movie.poster_path}`
                 : "https://www.movienewz.com/img/films/poster-holder.jpg"
             }
             alt="movie poster"
           ></img>
           <div className="product__container__content__details">
-            <p>{movie.Title}</p>
-            <p>({movie.Year})</p>
+            <p id="movie-title">{movie.original_title}</p>
+            <p id="movie-release-date">Release Date: {movie.release_date}</p>
           </div>
         </div>
       </div>
