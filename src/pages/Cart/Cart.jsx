@@ -1,6 +1,10 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 import "./Cart.scss";
+
+const notify = () =>
+  toast("Work in progress..", { style: { background: "#ba9511" } });
 
 const Cart = () => {
   const movie = useLocation().state.movie;
@@ -18,13 +22,25 @@ const Cart = () => {
             }
             alt="movie poster"
           ></img>
-          <p>{movie.Title}</p>
+          <div className="product__container__content__details">
+            <p>{movie.Title}</p>
+            <p>({movie.Year})</p>
+          </div>
         </div>
       </div>
 
       <div className="subtotal__container">
         <div className="subtotal__container__content">
-          <p>Total: 0.01 ETH</p>
+          <p className="subtotal__container__content__total">
+            <span id="total-label">Total: </span>
+            <span id="total-price">0.01 ETH</span>
+          </p>
+          <button
+            className="subtotal__container__content__buy-button"
+            onClick={notify}
+          >
+            Buy Movie
+          </button>
         </div>
       </div>
     </div>
