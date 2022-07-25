@@ -1,0 +1,69 @@
+@import "../../styles/variables.scss";
+
+.cart {
+    display: flex;
+    margin-top: 2rem;
+    //background-color: black;
+}
+
+.product__container {
+    width: 75%;
+    margin: 0 1rem;
+
+    border-radius: 10px;
+    background-color: $light;
+
+    &__content {
+        display: flex;
+        padding: 1.5rem;
+        
+        &__details {
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+    }
+}
+
+.subtotal__container {
+    vertical-align: top;
+    margin-right: 1rem;
+    width: 25%;
+    height: 100%;
+
+    border-radius: 10px;
+    background-color: $light;
+
+    &__content {
+        font-size: large;
+        padding: 1rem 1rem;
+        text-align: center;
+
+        &__total {
+            font-weight: 700;
+            margin-bottom: 3rem;
+
+            #total-label {
+                float: left;
+            }
+            #total-price {
+                float: right;
+            }
+        }
+
+        &__buy-button {
+            cursor: pointer;
+            width: 100%;
+            background: #3F91C7;
+            color: white;
+            padding: 1rem 0;
+            font-size: inherit;
+            border-radius: 5px;
+            border-style: none;
+            transition: 0.5s;
+
+            &:hover {
+                background: rgba(#3F91C7, 0.6);
+            }
+        }
+    }
+}
