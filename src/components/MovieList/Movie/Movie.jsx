@@ -10,7 +10,7 @@ const Movie = ({ movie }) => {
           className="moviecard__image"
           src={
             movie.poster_path !== null
-              ? `https://image.tmdb.org/t/p/w185/${movie.poster_path}`
+              ? `https://image.tmdb.org/t/p/w185${movie.poster_path}`
               : "https://www.movienewz.com/img/films/poster-holder.jpg"
           }
           alt="movie poster"
