@@ -14,7 +14,7 @@ const Cart = () => {
             className="product__container__content__poster"
             src={
               movie.poster_path !== null
-                ? `https://image.tmdb.org/t/p/w300/${movie.poster_path}`
+                ? `https://image.tmdb.org/t/p/w400${movie.poster_path}`
                 : "https://www.movienewz.com/img/films/poster-holder.jpg"
             }
             alt="movie poster"
