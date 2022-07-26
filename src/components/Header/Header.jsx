@@ -54,7 +54,7 @@ const Header = () => {
   };
 
   const handleWindowReload = () => {
-    if (location === "/") {
+    if (location.pathname === "/") {
       window.location.reload();
     }
   };
