@@ -42,7 +42,7 @@ const Connect = () => {
   const logOut = async () => {
     try {
       await logout();
-      toast.success("Logged out!");
+      toast.success("Disconnected");
     } catch (error) {
       alert(error);
     }
