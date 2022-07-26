@@ -1,11 +1,7 @@
 import React from "react";
-import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 import "./Cart.scss";
 import Buy from "../../components/Buy/Buy";
-
-const notify = () =>
-  toast("Work in progress..", { style: { background: "#ba9511" } });
 
 const Cart = () => {
   const movie = useLocation().state.movie;
